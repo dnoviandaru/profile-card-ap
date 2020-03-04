@@ -5,7 +5,7 @@ const User = (props) => {
   return (
     <div className='UserCard'>
       <div className='UserCardTop'>
-        <img src={props.pic} />
+        <img alt="" src={props.pic} />
       </div>
       <div className='UserCardBottom'>
         <h3>{props.name}</h3>
