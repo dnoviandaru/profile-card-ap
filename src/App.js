@@ -18,7 +18,7 @@ const User = (props) => {
 
 function App() {
   return (
-    <div class="listOfCards">
+    <div className="listOfCards">
       <User name = 'Naruto Uzumaki'
             email = 'naruto@konoha.gov'
             pic = 'https://vignette.wikia.nocookie.net/naruto/images/4/42/Naruto_Part_III.png/revision/latest/scale-to-width-down/300?cb=20180117103539'
