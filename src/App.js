@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import PropTypes from 'prop-types';
+import 'antd/dist/antd.css';
 
 class Search extends React.Component {
   constructor(props) {
