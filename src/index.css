@@ -93,3 +93,11 @@ h2, h3, h4, h5 {
 .Search-box::placeholder {
   color: #000;
 }
+
+.card {
+  margin: 5px;
+}
+
+.menu {
+  margin: 5px;
+}

@@ -1,32 +1,16 @@
 import React from 'react';
 import './App.css';
 import PropTypes from 'prop-types';
+import { Card, Row , Col} from 'antd';
+import { Menu } from 'antd';
+import {
+  MailOutlined,
+  SettingOutlined,
+} from '@ant-design/icons';
+import { Input } from 'antd';
+const { Search } = Input;
 
-class Search extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchText: ''
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-  
-  handleChange(e) {
-    this.setState({searchText: e.target.value}, () => {
-      this.props.searchText(this.state.searchText);
-    });
-  }
-  
-  render() {
-    return (
-      <div>
-        <form className="Search" onSubmit={e => e.preventDefault()}>
-          <input type="text" className="Search-box" placeholder="Filter names" onChange={this.handleChange}/>
-        </form>
-      </div>
-    );
-  }
-}
+const { SubMenu } = Menu;
 
 class User extends React.Component {
   static defaultProps = {
@@ -44,16 +28,11 @@ class User extends React.Component {
   render() {
     const {name, email, pic, job} = this.props;
     return (
-      <div className='UserCard'>
-        <div className='UserCardTop'>
-          <img alt="" src={pic} />
-        </div>
-        <div className='UserCardBottom'>
-          <h3>{name}</h3>
-          <h5>{email}</h5>
-          <h5>{job}</h5>
-        </div>
-      </div>
+      <Card title={name} style={{ width: 300 }}>
+        <img alt="" src={pic} style={{maxWidth: '100%', height: 200}}></img>
+        <p>{email}</p>
+        <p>{job}</p>
+      </Card>
     );
   }
 }
@@ -82,29 +61,73 @@ class App extends React.Component {
           job: 'FrontEnd Dev'
         },        
       ],
-      searchText: ''
+      searchText: '',
+      current: 'mail',
     }
   }
-  
-  searchText = res => {
-    this.setState({searchText: res});
-  }
-  
+
+  handleClick = e => {
+    console.log('click ', e);
+    this.setState({
+      current: e.key,
+    });
+  };
+
   render() {
     return (
-      <div className='App'>
-        <Search searchText={this.searchText} />
-        <main className='listOfCards'>
+      <div>
+        <div className="menu">
+          <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
+            <Menu.Item key="mail">
+              <MailOutlined />
+              Navigation One
+            </Menu.Item>
+            <SubMenu
+              title={
+                <span className="submenu-title-wrapper">
+                  <SettingOutlined />
+                  Navigation Two - Submenu
+                </span>
+              }
+            >
+              <Menu.ItemGroup title="Item 1">
+                <Menu.Item key="setting:1">Option 1</Menu.Item>
+                <Menu.Item key="setting:2">Option 2</Menu.Item>
+              </Menu.ItemGroup>
+              <Menu.ItemGroup title="Item 2">
+                <Menu.Item key="setting:3">Option 3</Menu.Item>
+                <Menu.Item key="setting:4">Option 4</Menu.Item>
+              </Menu.ItemGroup>
+            </SubMenu>
+            <Menu.Item key="alipay">
+              <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+                Navigation Three - Link
+              </a>
+            </Menu.Item>
+            <Menu.Item key="search" style={{borderBottom:'transparent', float:"right"}}>
+              <Search className="search-box"
+              placeholder="Find Profile..."
+              onSearch={value => console.log(value)}
+              style={{ width: 200 }}
+              />
+            </Menu.Item>
+          </Menu>
+        </div>
+        <div className="card">
+          <Row gutter={[16,16]}>
           {
             this.state.users
             .filter(user => (
               user.name.toLowerCase().includes(this.state.searchText.toLowerCase())                     
             ))
             .map((user, index) => (
-              <User key={index} name={user.name} email={user.email} pic={user.pic} job={user.job} />
+              <Col key={index} className="gutter-row" span={5}>
+                <User name={user.name} email={user.email} pic={user.pic} job={user.job} />
+              </Col>
             ))
-          }
-        </main> 
+          }          
+          </Row>
+        </div>
       </div>
     );
   }
