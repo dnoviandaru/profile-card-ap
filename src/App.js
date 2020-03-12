@@ -66,12 +66,16 @@ class App extends React.Component {
     }
   }
 
-  handleClick = e => {
-    console.log('click ', e);
-    this.setState({
-      current: e.key,
-    });
-  };
+  searchText = res => {
+    this.setState({searchText: res});
+  }
+
+  // handleClick = e => {
+  //   console.log('click ', e);
+  //   this.setState({
+  //     current: e.key,
+  //   });
+  // };
 
   render() {
     return (
@@ -105,9 +109,11 @@ class App extends React.Component {
               </a>
             </Menu.Item>
             <Menu.Item key="search" style={{borderBottom:'transparent', float:"right"}}>
-              <Search className="search-box"
+              <Search key="search-box" className="search-box"
               placeholder="Find Profile..."
-              onSearch={value => console.log(value)}
+              onSearch={value => this.setState({
+                searchText: value,
+              })}
               style={{ width: 200 }}
               />
             </Menu.Item>
