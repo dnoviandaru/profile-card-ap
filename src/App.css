@@ -50,3 +50,26 @@
 .ant-carousel .slick-slide h2 {
   color: #fff;
 }
+
+.header-title button{
+  background: black;
+  border: 0px;
+  padding: 1em 3em;
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+}
+
+.header-title{
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+  top:2em;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+}
