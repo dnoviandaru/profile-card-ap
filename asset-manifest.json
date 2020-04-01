@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/profile-card-ap/static/css/main.4d8b12e2.chunk.css",
+    "main.js": "/profile-card-ap/static/js/main.c8679c62.chunk.js",
+    "main.js.map": "/profile-card-ap/static/js/main.c8679c62.chunk.js.map",
+    "runtime-main.js": "/profile-card-ap/static/js/runtime-main.ea9ae4d1.js",
+    "runtime-main.js.map": "/profile-card-ap/static/js/runtime-main.ea9ae4d1.js.map",
+    "static/css/2.1bd2ab2f.chunk.css": "/profile-card-ap/static/css/2.1bd2ab2f.chunk.css",
+    "static/js/2.617ca875.chunk.js": "/profile-card-ap/static/js/2.617ca875.chunk.js",
+    "static/js/2.617ca875.chunk.js.map": "/profile-card-ap/static/js/2.617ca875.chunk.js.map",
+    "index.html": "/profile-card-ap/index.html",
+    "precache-manifest.1ac0fb1fc0d3bda4b6f50e67c9463b53.js": "/profile-card-ap/precache-manifest.1ac0fb1fc0d3bda4b6f50e67c9463b53.js",
+    "service-worker.js": "/profile-card-ap/service-worker.js",
+    "static/css/2.1bd2ab2f.chunk.css.map": "/profile-card-ap/static/css/2.1bd2ab2f.chunk.css.map",
+    "static/css/main.4d8b12e2.chunk.css.map": "/profile-card-ap/static/css/main.4d8b12e2.chunk.css.map",
+    "static/js/2.617ca875.chunk.js.LICENSE.txt": "/profile-card-ap/static/js/2.617ca875.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ea9ae4d1.js",
+    "static/css/2.1bd2ab2f.chunk.css",
+    "static/js/2.617ca875.chunk.js",
+    "static/css/main.4d8b12e2.chunk.css",
+    "static/js/main.c8679c62.chunk.js"
+  ]
+}
